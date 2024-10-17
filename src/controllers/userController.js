@@ -13,7 +13,23 @@ const submitContactForm = asyncHandler(async (req, res) => {
       error: "Validation Error",
       message: "All fields are required",
     });
-  }
+  } 
+   try {
+    console.log('Form filled');
+    res.status(200).json({
+      status: 200,
+      error: "Success",
+      message: "Form submitted Successfully. We will get back to you shortly."
+
+    })
+   } catch (error) {
+    console.error(error.reponse.body);
+    res.status(500).json({
+    status: 500,
+    error:  "Internal Server Error",
+    message: "Error while submitting form."
+    });
+   }
 });
 
 module.exports = {

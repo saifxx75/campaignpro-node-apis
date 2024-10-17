@@ -11,10 +11,7 @@ connectDb();
 
 // Middlewares
 const app = express();
-app.use(cors({
-  origin: 'http://localhost:3000',
-  methods: 'GET,POST,PUT,DELETE',
-}));
+app.use(cors());
 app.use(express.json());
 
 
@@ -28,7 +25,7 @@ app.get('/', (req, res) => {
 
 
 app.use('/auth', authRoutes);
-app.use('/user', userRoutes)
+app.use('/user', userRoutes);
 
 // Start the Server
 const port = process.env.PORT || 3002;
