@@ -18,3 +18,5 @@ const roleSchema = new Schema(
 }
 
 );
+
+module.exports = model("roles", roleSchema);

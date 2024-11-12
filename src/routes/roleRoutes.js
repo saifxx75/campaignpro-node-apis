@@ -1,5 +1,4 @@
 const express = require("express");
-const validateUser = require('../middlewares/validateUser');
 const validateAdmin = require('../middlewares/validateAdmin');
 
 const { 
